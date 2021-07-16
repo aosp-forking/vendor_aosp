@@ -13,8 +13,9 @@ CUSTOM_DEVICE := $(CUSTOM_BUILD)
 ifeq ($(VANILLA_BUILD), true)
     CUSTOM_APPS_VERSION := Vanilla
 else
-    $(call inherit-product, vendor/google/gms/gms-vendor.mk)
+    $(call inherit-product, vendor/gapps/config.mk)
     CUSTOM_APPS_VERSION := GApps
+    PRODUCT_PACKAGES += KrakenGAppsOverlay
 endif
 
 ifeq ($(CUSTOM_BUILD_TYPE), OFFICIAL)
